@@ -6,6 +6,7 @@ class Auth extends MX_Controller
     {
         parent::__construct();
         $this->load->model('m_auth');
+        udah_login();
     }
 
     function index()
@@ -28,6 +29,7 @@ class Auth extends MX_Controller
             $data_session = array(
                 'username' => $username,
                 'nama' => $row->nama,
+                'id' => $row->id,
                 'role_id' => $row->role_id,
                 'logged_in' => TRUE,
             );

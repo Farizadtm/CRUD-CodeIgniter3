@@ -48,7 +48,7 @@
                         <img src="<?php echo base_url() ?>assets/images/avatar/avatar-s-1.png" alt="" srcset="">
                     </div>
                     <div class="d-none d-md-block d-lg-inline-block">
-                        <?php echo $this->session->userdata('role_id') ?></div>
+                        <?php echo $this->session->userdata('nama') ?></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
