@@ -3,17 +3,17 @@
 function udah_login()
 {
     $ci = &get_instance();
-    $user_session = $ci->session->userdata('id');
+    $user_session = $ci->session->userdata('user_id');
     if ($user_session) {
-        redirect('admin');
+        redirect(base_url('admin'));
     }
 }
 
 function belum_login()
 {
     $ci = &get_instance();
-    $user_session = $ci->session->userdata('id');
+    $user_session = $ci->session->userdata('user_id');
     if (!$user_session) {
-        redirect('auth');
+        redirect(base_url('auth'));
     }
 }

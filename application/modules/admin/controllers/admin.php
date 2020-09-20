@@ -13,8 +13,8 @@ class Admin extends MX_Controller
     {
         $this->load->view('v_admin');
     }
-    function showtable()
+    function shownasabah()
     {
-        $this->load->view('v_table');
+        $this->load->view('v_nasabah');
     }
 }

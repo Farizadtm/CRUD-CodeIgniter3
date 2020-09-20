@@ -6,7 +6,7 @@ class Auth extends MX_Controller
     {
         parent::__construct();
         $this->load->model('m_auth');
-        udah_login();
+        // udah_login();
     }
 
     function index()
@@ -22,16 +22,15 @@ class Auth extends MX_Controller
             'username' => $username,
             'password' => $password
         );
-        $cek = $this->m_auth->cek_login("user", $where)->num_rows();
-        $row = $this->m_auth->cek_login("user", $where)->row();
+        $cek = $this->m_auth->cek_login("users", $where)->num_rows();
+        $row = $this->m_auth->cek_login("users", $where)->row();
         if ($cek > 0) {
 
             $data_session = array(
                 'username' => $username,
                 'nama' => $row->nama,
-                'id' => $row->id,
+                'user_id' => $row->user_id,
                 'role_id' => $row->role_id,
-                'logged_in' => TRUE,
             );
 
             $this->session->set_userdata($data_session);

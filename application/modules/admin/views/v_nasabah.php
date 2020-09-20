@@ -34,7 +34,6 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>City</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
