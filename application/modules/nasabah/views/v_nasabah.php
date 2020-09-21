@@ -25,7 +25,7 @@
                 <section class="section">
                     <div class="card">
                         <div class="card-header">
-                            Simple Datatable
+                            <a type="button" class="btn btn-primary pencil-square" href="<?= base_url('nasabah/form_add') ?>"><i data-feather="edit"></i> Tambah Nasabah</a>
                         </div>
                         <div class="card-body">
                             <table class='table table-striped' id="table1">
@@ -34,28 +34,20 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Graiden</td>
-                                        <td>vehicula.aliquet@semconsequat.co.uk</td>
-                                        <td>076 4820 8838</td>
-                                        <td>Offenburg</td>
-                                        <td>
-                                            <span class="badge bg-success">Active</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dale</td>
-                                        <td>fringilla.euismod.enim@quam.ca</td>
-                                        <td>0500 527693</td>
-                                        <td>New Quay</td>
-                                        <td>
-                                            <span class="badge bg-success">Active</span>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($nasabah as $nsbh) : ?>
+                                        <tr>
+                                            <td><?= $nsbh->nama; ?></td>
+                                            <td><?= $nsbh->email; ?></td>
+                                            <td><?= $nsbh->no_telp; ?></td>
+                                            <td>
+                                                <a type="button" class="btn btn-danger btn-sm" href="<?= base_url('nasabah/delete/' . $nsbh->nasabah_id); ?>">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

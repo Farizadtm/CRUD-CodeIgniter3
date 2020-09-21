@@ -5,7 +5,6 @@
         <?php $this->load->view('template/sidebar') ?>
         <div id="main">
             <?php $this->load->view('template/navbar') ?>
-
             <div class="main-content container-fluid">
                 <div class="page-title">
                     <h3>Dashboard</h3>
