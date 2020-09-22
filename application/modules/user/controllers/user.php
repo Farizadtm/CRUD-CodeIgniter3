@@ -1,15 +1,15 @@
 <?php
 
-class Nasabah extends MX_Controller
+class Cs extends MX_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('m_nasabah');
+        $this->load->model('m_cs');
     }
     function index()
     {
-        $data['nasabah'] = $this->m_nasabah->getall();
+        $data['nasabah'] = $this->m_cs->getall();
         $this->load->view('v_nasabah', $data);
     }
     function form_add()
@@ -27,13 +27,13 @@ class Nasabah extends MX_Controller
             'email' => $email,
             'no_telp' => $notelp
         );
-        $this->m_nasabah->add($data, 'nasabah');
+        $this->m_cs->add($data, 'nasabah');
         redirect('nasabah');
     }
     function form_update($id)
     {
         $where = array('nasabah_id' => $id);
-        $data['nasabah'] = $this->m_nasabah->edit('nasabah', $where)->result();
+        $data['nasabah'] = $this->m_cs->edit('nasabah', $where)->result();
         $this->load->view('v_form_update', $data);
     }
     function update()
@@ -53,12 +53,12 @@ class Nasabah extends MX_Controller
             'nasabah_id' => $id,
         );
 
-        $this->m_nasabah->update($where, $data, 'nasabah');
+        $this->m_cs->update($where, $data, 'nasabah');
         redirect('nasabah');
     }
     function delete($id)
     {
-        $this->m_nasabah->delete($id);
+        $this->m_cs->delete($id);
         redirect('nasabah');
     }
 }
